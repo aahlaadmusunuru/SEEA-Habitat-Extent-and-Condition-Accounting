@@ -1,0 +1,60 @@
+
+---
+title: Habitat transformation markers map report|
+
+output: 
+ html_document:
+   theme: flatly # default, cerulean, journal, flatly, darkly, readable, spacelab, united, cosmo, lumen, paper, sandstone, simplex, and yeti
+   highlight: tango # default, tango, pygments, kate, monochrome, espresso, zenburn, haddock, breezedark, and textmate
+   smart: true
+   toc: true
+   toc_depth: 2
+   toc_float:
+     collapsed: false
+     smooth_scroll: false
+   numbers_sections: true
+   fig_width: 7
+   fig_height: 6
+   fig_caption: true
+   df_print: paged
+
+runtime: shiny  
+params:
+
+  n: NA
+  d: NA
+  minimum: 
+    label: "Minimum:"
+    value: 100
+    input: slider
+    min: 0
+    max: 1000
+---
+
+
+
+# Introduction
+In this report, we present the habitat transformation map and the metadata information. The map shows how a specific habitat is being transformed from one class to another, indicating locations with high and low levels of transformation. Each marker provides detailed information about the habitat, such as its latitude, longitude, and transformation data.
+
+```{r echo=FALSE, message=FALSE,warning=FALSE, paged.print=FALSE}
+
+
+params$n
+
+
+```
+*Figure 1: Habitat transformation markers map.*
+
+# Meta data
+
+
+```{r echo=FALSE, message=FALSE,warning=FALSE, paged.print=FALSE}
+
+datatable(data.frame(params$d),options = list(
+  dom = 't',
+  scrollX = TRUE,
+  scrollCollapse = TRUE
+))
+
+
+```

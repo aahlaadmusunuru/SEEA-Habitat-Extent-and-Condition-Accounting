@@ -1,0 +1,25 @@
+Statistics,Condition,Habitat,Reference Level/Target
+Min,Aboveground mangrove biomassy,Mangroves,5
+Mean,Aboveground mangrove biomassy,Mangroves,6
+Max,Aboveground mangrove biomassy,Mangroves,7
+SD,Aboveground mangrove biomassy,Mangroves,8
+Min,Mangrove basalarea weighted height,Mangroves,35
+Mean,Mangrove basalarea weighted height,Mangroves,36
+Max,Mangrove basalarea weighted height,Mangroves,37
+SD,Mangrove basalarea weighted height,Mangroves,38
+Min,Mangrove canopy maximum height,Mangroves,35
+Mean,Mangrove canopy maximum height,Mangroves,36
+Max,Mangrove canopy maximum height,Mangroves,37
+SD,Mangrove canopy maximum height,Mangroves,38
+Min,Aboveground mangrove biomassy,Non Mangroves,10
+Mean,Aboveground mangrove biomassy,Non Mangroves,10
+Max,Aboveground mangrove biomassy,Non Mangroves,10
+SD,Aboveground mangrove biomassy,Non Mangroves,10
+Min,Mangrove basalarea weighted height,Non Mangroves,10
+Mean,Mangrove basalarea weighted height,Non Mangroves,10
+Max,Mangrove basalarea weighted height,Non Mangroves,10
+SD,Mangrove basalarea weighted height,Non Mangroves,10
+Min,Mangrove canopy maximum height,Non Mangroves,88
+Mean,Mangrove canopy maximum height,Non Mangroves,89
+Max,Mangrove canopy maximum height,Non Mangroves,90
+SD,Mangrove canopy maximum height,Non Mangroves,91

@@ -1,0 +1,4 @@
+Data Type  ,Satellite ,Projection ,Resalution ,Formate ,Data Source 
+Mangroves,"JERS-1,ALOS PALSAR,ALOS-2 PALSAR-2",WGS 1984,30 m,SHP,https://data.unep-wcmc.org/datasets/45
+World Database on Protected Areas,,WGS 1984,,SHP,https://www.iucn.org/theme/protected-areas/our-work/world-database-protected-areas
+,,,,,
