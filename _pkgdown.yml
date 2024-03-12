@@ -1,0 +1,9 @@
+site:
+  output: .
+  self_contained: true
+  home: index.md
+  title: My Shiny App
+
+articles:
+  article:
+    - 'README.Rmd'

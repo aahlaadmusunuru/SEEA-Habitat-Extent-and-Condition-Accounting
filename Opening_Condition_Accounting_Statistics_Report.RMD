@@ -1,0 +1,64 @@
+
+---
+title:  SEEA Opening Condition Accounting Statistics Report|
+
+output: 
+ html_document:
+   theme: flatly # default, cerulean, journal, flatly, darkly, readable, spacelab, united, cosmo, lumen, paper, sandstone, simplex, and yeti
+   highlight: tango # default, tango, pygments, kate, monochrome, espresso, zenburn, haddock, breezedark, and textmate
+   smart: true
+   toc: true
+   toc_depth: 2
+   toc_float:
+     collapsed: false
+     smooth_scroll: false
+   numbers_sections: true
+   fig_width: 7
+   fig_height: 6
+   fig_caption: true
+   df_print: paged
+
+runtime: shiny   
+params:
+  m: NA
+
+  minimum: 
+    label: "Minimum:"
+    value: 100
+    input: slider
+    min: 0
+    max: 1000
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+set.seed(1234)
+library(knitr)
+library(mapview)
+library(kableExtra)
+library(ggplot2)
+library(dplyr)
+library(purrr)
+
+```
+
+
+# Introduction
+According to the SEEA (System of Environmental-Economic Accounting) Ecosystem Accounting, this report generates ecosystem condition account records. 
+These records display the minimum, mean, maximum, and standard deviation (SD) of the statistical values of the condition indicators across the region. 
+All the condition indicators are harmonized together, and the popups displayed on the map provide more detailed information about the condition indicators. Additionally, the report includes metadata information.
+
+## Ecosystem Condition map
+Figure 1 below shows the ecosystem condition indicators map of the region
+
+
+```{r echo=FALSE, message=TRUE, paged.print=FALSE,warning=FALSE}
+
+# All defaults
+
+   
+   mapview(params$m)
+
+```
+*Figure 1: Shows the condition indicators map.* 
