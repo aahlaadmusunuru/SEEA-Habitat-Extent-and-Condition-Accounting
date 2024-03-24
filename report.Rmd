@@ -1,0 +1,424 @@
+
+---
+title:  Habitat Extent and Condition Accounting|
+
+output: 
+ html_document:
+   theme: flatly # default, cerulean, journal, flatly, darkly, readable, spacelab, united, cosmo, lumen, paper, sandstone, simplex, and yeti
+   highlight: tango # default, tango, pygments, kate, monochrome, espresso, zenburn, haddock, breezedark, and textmate
+   smart: true
+   toc: true
+   toc_depth: 2
+   toc_float:
+     collapsed: false
+     smooth_scroll: false
+   numbers_sections: true
+   fig_width: 7
+   fig_height: 6
+   fig_caption: true
+   df_print: paged
+
+runtime: shiny  
+params:
+  n: NA
+  m: NA
+  o: NA
+  q: NA
+  r: NA
+  s: NA
+  t: NA
+  y: NA
+  z: NA
+  x: NA
+  c: NA
+  v: NA
+  b: NA
+  a: NA
+  d: NA
+  f: NA
+  g: NA
+  h: NA
+  j: NA
+  k: NA
+  
+  minimum: 
+    label: "Minimum:"
+    value: 100
+    input: slider
+    min: 0
+    max: 1000
+---
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+set.seed(1234)
+library(knitr)
+library(kableExtra)
+library(ggplot2)
+library(dplyr)
+library(purrr)
+
+```
+
+
+
+# Introduction
+Worldwide, ecosystem services are impacted by disturbances that operate at various scales and intensities. However, due to an increase in coastal development and global climate change impacts, disturbances on ecosystem are now occurring at increasing frequencies and intensities. Therefore, long-term ecological monitoring programs are essential to follow ecosystem change and subsequent recovery after disturbances, and are often set up to inform stakeholders on ecosystem status.
+
+## Key Geography Regions
+
+The below map highlights the total extent of ecosystem  extent ecosystem services come from these ecosystems. The map helps to understand how 
+the extent of the ecosystem services are distributed in different locations. 
+
+```{r echo=FALSE, message=TRUE, paged.print=FALSE}
+
+# All defaults
+
+
+                params$n
+
+
+
+ 
+```
+    
+    
+*Figure 1: Shows the  Map of the  Geography Extent* 
+
+
+
+
+
+
+## Ecosystem Extent Asset Account {.tabset .tabset-fade}
+
+### Ecosystem Extent Asset Account
+
+
+
+```{r echo=FALSE, message=FALSE,warning=FALSE}
+
+
+
+
+
+datatable(params$m,options = list(
+  dom = 't',
+  scrollX = TRUE,
+  scrollCollapse = TRUE
+))
+
+```
+
+
+*Table 1 : Shows the Ecosystem Extent Asset Account* 
+
+
+
+### SEEA change matrix 
+
+```{r echo=FALSE, message=FALSE}
+
+   datatable(params$o,options = list(
+  dom = 't',
+  scrollX = TRUE,
+  scrollCollapse = TRUE
+))
+
+
+
+
+```
+*Table 2 : Shows the  SEEA change matrix* 
+
+
+
+
+### Habitate Change Table
+
+```{r echo=FALSE, message=FALSE}
+
+   datatable(params$q,options = list(
+  dom = 't',
+  scrollX = TRUE,
+  scrollCollapse = TRUE
+))
+
+
+
+
+```
+*Table 3 : Shows the  SEEA Habitat change Table* 
+
+
+
+## Habitate Change in  Area Hectares {.tabset .tabset-fade}
+
+
+### Habitate Change
+
+```{r echo=FALSE, message=FALSE}
+
+params$r
+
+
+
+```
+*figure 2: Shows the  Change in  Habitat change Area* 
+
+## Habitate Change in  Percentage {.tabset .tabset-fade}
+
+### Habitat Percentage 
+
+```{r echo=FALSE, message=FALSE}
+
+
+
+params$s
+
+```
+*figure 3: Shows the  Change in  Habitat Percentage* 
+
+
+## Difference in Habitate Area Hectores {.tabset .tabset-fade}
+
+### Difference in Area Hectares
+
+```{r echo=FALSE, message=FALSE}
+
+
+
+
+params$t
+
+```
+*figure 4: Shows the  Change in  Habitat Area in Hectares* 
+
+## Habitate Change in  Percentage {.tabset .tabset-fade}
+
+### Difference in %
+
+```{r echo=FALSE, message=FALSE}
+
+
+params$y
+
+
+
+
+```
+
+*figure 5: Shows the  Habitat  Difference in %* 
+
+
+
+
+
+
+
+
+##  Change in Habitate  Percentage {.tabset .tabset-fade}
+
+
+```{r echo=FALSE, message=FALSE,warning=FALSE}
+
+mapview(params$g)
+
+```
+
+
+*figure 6: Shows the  Habitat  Condition Indicator* 
+
+
+
+
+
+
+
+
+
+## change of Condition Total Geographical  {.tabset .tabset-fade}
+
+
+### Min Total Geography
+```{r echo=FALSE, message=FALSE}
+
+
+
+
+
+
+
+
+   datatable(params$z,options = list(
+  dom = 't',
+  scrollX = TRUE,
+  scrollCollapse = TRUE
+))
+
+```
+
+
+### Mean Total Geography
+```{r echo=FALSE, message=FALSE}
+
+
+
+
+   datatable(params$x,options = list(
+  dom = 't',
+  scrollX = TRUE,
+  scrollCollapse = TRUE
+))
+```
+
+
+### Max Total Geography
+```{r echo=FALSE, message=FALSE}
+
+
+   datatable(params$c,options = list(
+  dom = 't',
+  scrollX = TRUE,
+  scrollCollapse = TRUE
+))
+
+
+```
+
+
+
+
+### SD Total Geography
+```{r echo=FALSE, message=FALSE}
+
+
+   datatable(params$v,options = list(
+  dom = 't',
+  scrollX = TRUE,
+  scrollCollapse = TRUE
+))
+
+
+```
+
+
+
+## Chanage of Habitent Condition{.tabset .tabset-fade}
+
+
+### Habitent Condition Min
+
+
+```{r echo=FALSE, message=FALSE}
+
+
+   datatable(params$b,options = list(
+  dom = 't',
+  scrollX = TRUE,
+  scrollCollapse = TRUE
+))
+
+```
+
+### Habitent Condition Mean
+
+
+```{r echo=FALSE, message=FALSE}
+
+
+
+
+   datatable(params$a,options = list(
+  dom = 't',
+  scrollX = TRUE,
+  scrollCollapse = TRUE
+))
+
+
+
+```
+
+
+### Habitent Condition Max
+
+
+```{r echo=FALSE, message=FALSE}
+
+
+   datatable(params$d,options = list(
+  dom = 't',
+  scrollX = TRUE,
+  scrollCollapse = TRUE
+))
+
+
+
+
+```
+
+
+### Habitent Condition SD
+
+
+```{r echo=FALSE, message=FALSE}
+
+   datatable(params$f,options = list(
+  dom = 't',
+  scrollX = TRUE,
+  scrollCollapse = TRUE
+))
+
+```
+
+
+
+
+
+## Condition with reference target total geography {.tabset .tabset-fade}
+
+
+### Total Geography Condition 
+
+
+```{r echo=FALSE, message=FALSE}
+
+datatable(  data.frame(params$h))
+
+```
+
+
+
+
+
+## Reference target Habitent Condition {.tabset .tabset-fade}
+
+
+
+
+```{r echo=FALSE, message=FALSE}
+
+datatable(data.frame(params$j))
+```
+
+
+
+
+## Metadata Information{.tabset .tabset-fade}
+
+
+### Metadata  
+
+```{r echo=FALSE, message=FALSE}
+data.frame(params$k)
+
+```
+
+
+
+
+
+
+

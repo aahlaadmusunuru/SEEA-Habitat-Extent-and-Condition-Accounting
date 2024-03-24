@@ -1,0 +1,71 @@
+
+---
+title:  Habitat Extent and Condition Accounting|
+
+output: 
+ html_document:
+   theme: flatly # default, cerulean, journal, flatly, darkly, readable, spacelab, united, cosmo, lumen, paper, sandstone, simplex, and yeti
+   highlight: tango # default, tango, pygments, kate, monochrome, espresso, zenburn, haddock, breezedark, and textmate
+   smart: true
+   toc: true
+   toc_depth: 2
+   toc_float:
+     collapsed: false
+     smooth_scroll: false
+   numbers_sections: true
+   fig_width: 7
+   fig_height: 6
+   fig_caption: true
+   df_print: paged
+
+runtime: shiny   
+params:
+
+  n: NA
+
+  minimum: 
+    label: "Minimum:"
+    value: 100
+    input: slider
+    min: 0
+    max: 1000
+---
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+set.seed(1234)
+library(knitr)
+library(kableExtra)
+library(ggplot2)
+library(dplyr)
+library(purrr)
+
+```
+
+
+
+# Introduction
+Worldwide, ecosystem services are impacted by disturbances that operate at various scales and intensities. However, due to an increase in coastal development and global climate change impacts, disturbances on ecosystem are now occurring at increasing frequencies and intensities. Therefore, long-term ecological monitoring programs are essential to follow ecosystem change and subsequent recovery after disturbances, and are often set up to inform stakeholders on ecosystem status.
+
+## Key Geography Regions
+
+The below map highlights the total extent of ecosystem  extent ecosystem services come from these ecosystems. The map helps to understand how 
+the extent of the ecosystem services are distributed in different locations. 
+
+```{r echo=FALSE, message=TRUE, paged.print=FALSE}
+
+# All defaults
+
+
+                params$n
+
+
+
+ 
+```
+    
+    
+*Figure 1: Shows the  Map of the  Geography Extent* 
+
