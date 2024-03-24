@@ -34,7 +34,7 @@ params:
 
 
 # Introduction
-In this report, we present the habitat transformation map and the metadata information. The map shows how a specific habitat is being transformed from one class to another, indicating locations with high and low levels of transformation. Each marker provides detailed information about the habitat, such as its latitude, longitude, and transformation data.
+In this report, we present the habitat transformation map and the metadata information. The map shows how a specific habitat is being transformed from one class to another, indicating locations. Each marker provides detailed information about the habitat, such as its latitude, longitude, and transformation data.
 
 ```{r echo=FALSE, message=FALSE,warning=FALSE, paged.print=FALSE}
 

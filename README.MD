@@ -2,7 +2,8 @@
 
 # <h1 style="text-align:center;">SEEA-Habitat Extent and Conditions Accounting-Tool</h1>
 
-Author: Aahlaad Musunuru  
+Acknowledgement: For more information on the Ocean Extent and condition accounting tool please contact Aahlaad Musunuru.
+ 
 Email: aahlaadmusunuru1995@gmail.com
 
 
@@ -19,11 +20,10 @@ Email: aahlaadmusunuru1995@gmail.com
       - [2.1.2: Filter the admin boundaries data](#212-filter-the-admin-boundaries-data)
       - [2.1.3: Add Mangroves Data](#213-add-mangroves-data)
       - [2.1.4: Clip Mangroves Data](#214-clip-mangroves-data)
-      - [2.1.5 Add Field to Babeldaob Island](#215-add-field-to-babeldaob-island)
-      - [2.1.6:Dissolve Admin Vector Layer.](#216dissolve-admin-vector-layer)
-      - [2.1.7: Merge mangroves and admin layers.](#217-merge-mangroves-and-admin-layers)
-      - [2.1.8: Convert Raster to Vector](#218-convert-raster-to-vector)
-      - [2.1.9: Clip the rasters to the condition Indicators.](#219-clip-the-rasters-to-the-condition-indicators)
+      - [2.1.5: Merge mangroves and admin layers.](#215-merge-mangroves-and-admin-layers)
+      - [2.1.6: Convert Raster to Vector](#216-convert-raster-to-vector)
+      - [2.1.7: Load all the Condition.](#217-load-all-the-condition)
+      - [2.1.8: Clip the rasters to the condition Indicators.](#218-clip-the-rasters-to-the-condition-indicators)
     - [Step-3: Generating Habitat Extent and Condition Accounts Using R-Shiny (Ocean Extent And Condition Accounting):](#step-3-generating-habitat-extent-and-condition-accounts-using-r-shiny-ocean-extent-and-condition-accounting)
       - [Step-3.1.1 Step-1: R-Shiny (Ocean Extent And Condition Accounting)](#step-311-step-1-r-shiny-ocean-extent-and-condition-accounting)
       - [Step-3.1.2 R-Shiny Step-1 Upload Admin Boundaries(Ocean Extent And Condition Accounting)](#step-312-r-shiny-step-1-upload-admin-boundariesocean-extent-and-condition-accounting)
@@ -48,14 +48,14 @@ In this study, we have developed a tool using the R-Shiny application to support
 ## Overall Procedure:
 
 The overall process is to develop several SEEA accounts is
-distinguished in to 3 different types which includes Data collection , Data preprocessing and generating accounts In this study, we explain the process of producing habitat extent and condition accounts. We have chosen Palau's Babeldaob island as a case study to develop various types of accounts.  
+distinguished in to 3 different types which includes Data collection , Data preprocessing and generating accounts In this study, we explain the process of producing habitat extent and condition accounts. We have chosen Palau's Ngarchelong island as a case study to develop various types of accounts.  
 
  
 ![Ocerall Methodology](./Work_Flow.png)
 <p style="text-align:center;text decoration:bold">Figure 1 : Overall Procedure</p>
 
 ### Step-1 Data Collection:
-In Data Collection and preprocessing stage we are going to download and pre process the mangroves extent and condition indicators to the Babeldaob admin boundaries. 
+In Data Collection and preprocessing stage we are going to download and pre process the mangroves extent and condition indicators to the Ngarchelong admin boundaries. 
 
 
 #### Step-1.1-Data Mangroves Data: 
@@ -112,161 +112,125 @@ Open QGIS Desktop with GRASS, and do the following:
 ####  2.1.2: Filter the admin boundaries data 
 
 
-*  Right Click on PLW adm1 and open <span style="color:#0766AD"> Attribute Table</span> 
-
-![Palau_Admin_Selction](./Images/Attribute_Table_Selection.png)
+* Click on Select Feature By area button on top ![Select_filter](./Images/Select_filter.png) 
+* Now select the  "Ngarchelong" region to filter the data. 
+![Palau_Admin_Selction](./Images/PLW.png)
 <p style="text-align:center;text decoration:bold">Figure 8: Open the attribute table</p>
 
-*  Copey the  <span style="color:#0766AD">SQL Statement</span> Select feature using the expression
 
-```sql
-"NAME_1" in ('Aimeliik','Airai',
-'Melekeok','Ngaraard','Ngarchelong',
-'Ngardmau','Ngatpang','Ngchesar',
-'Ngeremlengui','Ngiwal')
-```
+* Filter the Ngarchelong region from the PLW_adm1
+* Now right click on the PLW_adm1 and click on Export and select Save Selected Features As...
+![Export_Ngarchelong](./Images/Export_Ngarchelong.png)
+<p style="text-align:center;text decoration:bold">Figure 9: Export the Ngarchelong from PLW_adm1.</p>
 
+* Export the Ngarchelong region as a shape-file to QGIS.
+  
+![Export_NgarchelongReagion_SHP](./Images/Export_NgarchelongReagion_SHP.png)
 
-*  Copey the  <span style="color:#0766AD">SQL Statement</span> in the Select by expression and click on the select features and click on Close.
+<p style="text-align:center;text decoration:bold">Figure 10: Export the Ngarchelong admin extent.</p>
 
-![Palau_Admin_Selection](./Images/Select_Attribute.png)
+* Ok 
 
-<p style="text-align:center;text decoration:bold">Figure 9: Attribute Selection </p>
-
-*  Now export and save as Babeldaob.shp as a vector layer.
-
-![SaveVector_layer](./Images/SaveVector_layer.png)
-
-<p style="text-align:center;text decoration:bold">Figure 10: Save as  Babeldaob island.</p>
-
-*  Now right click on the  <span style="color:#0766AD">PLW_adm1</span> and remove the layer
-
-![Remove_PLW_adm1](./Images/Remove_PLW_adm1.png)
-
-<p style="text-align:center;text decoration:bold">Figure 11: Remove layers.</p>
 
 
 ####  2.1.3: Add Mangroves Data 
-*  Click on Add Layer and select add vector layer 
+*  Click on Add Layer 
+*  Select add vector layer 
 * Add global mangroves <span style="color:#0766AD">gmw_v3_2007_vec.shp </span> and  <span style="color:#0766AD">gmw_v3_2016_vec.shp </span>  
 ![Add_mangrove_Global](./Images/Add_mangove_Global.png)
-<p style="text-align:center;text decoration:bold">Figure 12: Add Vector layer</p>
+<p style="text-align:center;text decoration:bold">Figure 11: Add Vector layer</p>
 
+* Click on Add.
+  
 ####   2.1.4: Clip Mangroves Data 
 
-*  Go to Vector and select on <span style="color:#0766AD">Geoprocessing Tools</span> click on clip 
+* In the processing tool box search for <span style="color:#0766AD">Clip vector by extent </span> 
 *  In the Input layer select <span style="color:#0766AD">gmw_v3_2007_vec </span>
+*  In the Clipping extent select  <span style="color:#0766AD">Ngarchelong </span>
+*  Click on select button and go to   <span style="color:#0766AD">Save to file</span>
+*  Save the file as <span style="color:#0766AD">gmw_v3_2007_Ngarchelong</span>
+*   Click on  <span style="color:#0766AD">Run</span>
 
-*  In the overlay layer select<span style="color:#0766AD"> Babeldaob</span>
-*  Click on select button and go to   <span style="color:#0766AD">Create Temporary file</span>
-*  Save the file as <span style="color:#0766AD">gmw_v3_2007_Babeldaob  </span>
-*   Click on  <span style="color:#0766AD"> Run </span>
+![gmw_v3_2007_vec_clip_magroves](./Images/gmw_v3_2007_vec_clip_magroves.png)
+<p style="text-align:center;text decoration:bold">Figure 12: Clip the Global mangroves data</p>
 
-![Clip_Global_Mangroves2007](./Images/Clip_Global_Mangroves2007.png)
-<p style="text-align:center;text decoration:bold">Figure 13: Clip the Global mangroves data</p>
-
-*   Repeat the steps to clip the vector layer for <span style="color:#0766AD"> gmw_v3_2016_vec.shp </span> and save as <span style="color:#0766AD"> gmw_v3_2016_Babeldaob.shp </span>
+* Repeat the steps to clip the vector layer for <span style="color:#0766AD"> gmw_v3_2016_vec.shp </span> and save as <span style="color:#0766AD"> gmw_v3_2016_Ngarchelong.shp </span>
   
-#### 2.1.5 Add Field to Babeldaob Island
 
- 
-* Right click on the <span style="color:#0766AD"> Babeldaob </span> click on open attribute table
-
- ![Open_Attribute_To_Add_filed](./Images/Open_Attribute_To_Add_filed.png)
-<p style="text-align:center;text decoration:bold">Figure 15: Open Attribute Table</p>
-
-* Click on the <span style="color:#0766AD"> Field Calculator </span> In the output field names define as   <span style="color:#0766AD"> Island </span> and the output field type as  <span style="color:#0766AD"> text </span> define the name as  <span style="color:#0766AD"> Babeldaob </span> finally click on ok 
-
-![Babelbaob_Add_Field](./Images/Babelbaob_Add_Field.png)
-
-<p style="text-align:center;text decoration:bold">Figure 16: Add Field To Babeldaob</p>
-
-* Add filed to <span style="color:#0766AD"> Island </span> Babeldaob
+#### 2.1.5: Merge mangroves and admin layers.
 
 
+*  Now right click and remove all other layers except<span style="color:#0766AD">   Ngarchelong,     gmw_v3_2007_Ngarchelong, and gmw_v3_2016_Ngarchelong </span>
 
 
-*  Now click on save editing  ![Save_editing](./Images/Save_edditing.png) and finally stop the editing   ![stop_editing](./Images/stop_edditing.png)
-    
-*  Click on <span style="color:#0766AD"> OK </span>
+* In the input layers select <span style="color:#0766AD">gmw_v3_2007_Ngarchelong and Ngarchelong </span> 
+* In the distribution we need to select on  the <span style="color:#0766AD"> projection </span> .
+* Finally save the layer as <span style="color:#0766AD"> Year_2007_Ngarchelong_Mangroves_Non_Mangroves</span>
+* Repeat the same steps and create a new merge layer and name as <span style="color:#0766AD">Year_2016_Ngarchelong_Mangroves_Non_Mangroves</span>
 
+* finally click on run to save the result.
+  
+ ![stop_editing](./Images/Merge_Vector_Layer_File.png)
 
-#### 2.1.6:Dissolve Admin Vector Layer.
+<p style="text-align:center;text decoration:bold">Figure 13: Merge Vector Layer</p>
 
+* Right click on the <span style="color:#0766AD">Year_2007_Ngarchelong_Mangroves_Non_Mangroves</span> Click on Open Attribute Table
 
-*  Go to Vector and click on Geoprocessing Tools and click on <span style="color:#0766AD"> Dissolve </span>
-*  In the Input layer select <span style="color:#0766AD"> Babeldaob </span>
-*  In the Input options select <span style="color:#0766AD"> Island </span>
-* Now click on ![Browse](./Images/Browse.png) and save as <span style="color:#0766AD"> Babeldaob_Dissolve </span>
-*  At the end click on  <span style="color:#0766AD"> Run </span>
-
-    
-![Browse](./Images/Dissolve.png)
-<p style="text-align:center;text decoration:bold">Figure 17: Dissolve</p>
-
-
-
-
-
-#### 2.1.7: Merge mangroves and admin layers.
-
-
-*  Now right click on the layer and remove all other layers except<span style="color:#0766AD"> Babeldaob_Dissolve,  gmw_v3_2007_Babeldaob, and gmw_v3_2016_Babeldaob </span>
-*  Merge  <span style="color:#0766AD"> Babeldaob_Dissolve,  gmw_v3_2007_Babeldaob</span> to generate Mangrove and non mangrove class. 
-* To do this first click on vector and go to <span style="color:#0766AD"> Data Management Tools </span> select on 
-     Merge vector layers
-
- ![stop_editing](./Images/Selet_Layer.png)
-<p style="text-align:center;text decoration:bold">Figure 18: Merge Vector Layer</p>
-
-* In the input layers select Babeldaob_Dissolve,  gmw_v3_2007_Babeldaob, 
-* In the distribution we need to select on  the projection.
-* Finally save the layer as <span style="color:#0766AD"> Year_2007_Babeldaob_Mangroves_Non_Mangroves</span>
-* Repeat the same steps from the 32 to 37 and create a new layer name as <span style="color:#0766AD">Year_2016_Babeldaob_Mangroves_Non_Mangroves</span>
-* Right click on the <span style="color:#0766AD">Year_2007_Babeldaob_Mangroves_Non_Mangroves</span> Click on Open Attribute Table
-* Click on the ![stop_editing](./Images/stop_edditing.png) on top of the attribute table 
+* Click on the ![stop_editing](./Images/stop_edditing.png) on top of the attribute table. 
 * Next in the PXLVAL field replace Null value with "2".
-    
-* click on save edit button ![Save_editing](./Images/Save_edditing.png) finally stop the editing. 
-    
+* In the fid replace "Null" value with the 0.
+* click on save edit button ![Save_editing](./Images/Save_eddition_attribute.png) finally stop the editing. 
 * Click on close button to close the attribute table.
     
- ![stop_editing](./Images/mangrove_non_mangrove_class_Vector.png)
-<p style="text-align:center;text decoration:bold">Figure 19: Open Attribute Table</p>
+ ![stop_editing](./Images/Save_edditing_Attribute.png)
+<p style="text-align:center;text decoration:bold"> Figure 14: Open Attribute Table</p>
 
-     
-#### 2.1.8: Convert Raster to Vector
+#### 2.1.6: Convert Raster to Vector
 
 * To do this first click on <span style="color:#0766AD">Raster</span> and select on conversion in which we need to convert from vector to raster.
-* Input layer defeine  <span style="color:#0766AD">Year_2007_Babeldaob_Mangroves_Non_Mangroves</span>
+* Input layer defeine  <span style="color:#0766AD">Year_2007_Ngarchelong_Mangroves_Non_Mangroves</span>
 * Field to use for a burn in value <span style="color:#0766AD">PXlVAL</span>
 * Output raster size units<span style="color:#0766AD">Georeferenced_units</span>
 * Width/Horizontal resolution define  <span style="color:#0766AD">0.000300</span>
 * Height/Vertical  resolution define  <span style="color:#0766AD">0.000300</span>
-Output extent define as <span style="color:#0766AD">Year_2007_Babeldaob_Mangroves_Non_Mangroves</span>
+Output extent define as <span style="color:#0766AD">Year_2007_Ngarchelong_Mangroves_Non_Mangroves</span>
 
-* If we go down click on brows button and we can see rasterized and select on <span style="color:#0766AD">save to file</span> save the raster image as <span style="color:#0766AD">Year_2007_Babeldaob_Mangroves_Non_Mangroves</span>
+* If we go down click on brows button and we can see rasterized and select on <span style="color:#0766AD">save to file</span> save the raster image as <span style="color:#0766AD">Year_2007_Ngarchelong_Mangroves_Non_Mangroves</span>
   
 * Click on <span style="color:#0766AD">Run</span>
-* Repeat the same steps for the <span style="color:#0766AD">Year_2016_Babeldaob_Mangroves_Non_Mangroves</span>
+* Repeat the same steps for the <span style="color:#0766AD">Year_2016_Ngarchelong_Mangroves_Non_Mangroves</span>
+
+
+
+
+
+<!--  Continue From hear a -->
 
  ![Convert Raster to Vector](./Images/Convert_Vector_raster.png)
-<p style="text-align:center;text decoration:bold">Figure 20: Convert Raster to Vector</p>
+<p style="text-align:center;text decoration:bold">Figure 15: Convert Raster to Vector</p>
 
-* Right click and remove all the layers except  Year_2007_Babeldaob_Mangroves_Non_Mangroves,Year_2016_Babeldaob_Mangroves_Non_Mangroves raster files more over the Babeldaob_Dissolve layer.
+* Right click and remove all the layers except  Year_2007_Ngarchelong_Mangroves_Non_Mangroves,Year_2016_Ngarchelong_Mangroves_Non_Mangroves raster files more over the Ngarchelong layer.
    
+#### 2.1.7: Load all the Condition.
 
-#### 2.1.9: Clip the rasters to the condition Indicators.
+* Now click on Layers
+* Next Select Add raser Layers 
+* Add all the condition raster layers in to QGIS Mangrove_agb_Palau,Mangrove_hmax95_Palau and Mangrove_hba95_Palau
+   ![Add_raster_layer](./Images/Add_raster_layer.png)
+<p style="text-align:center;text decoration:bold">Figure 16: Load the Condition Raster</p>
+
+
+#### 2.1.8: Clip the rasters to the condition Indicators.
 
 * First click in raster and go to the  <span style="color:#0766AD">Extraction</span>.
 *  Next Click on <span style="color:#0766AD">Clip raster by mask layer</span>
 * In the input layer  define <span style="color:#0766AD">Mangrove_agb_Palau</span>
-* In the masking layer define  <span style="color:#0766AD">Babeldaob_Dissolve</span>
+* In the masking layer define  <span style="color:#0766AD">Ngarchelong</span>
 *  Define the   <span style="color:#0766AD">Projection</span>
 * Click on  <span style="color:#0766AD">Run</span>  
-
-![Clip Conation Raster](./Images/Clip_Condtion_Raster_Data.png)
-<p style="text-align:center;text decoration:bold">Figure 21: Clip Condition Indicators Raster</p>
+* Clip the raster for all three layers Mangrove_agb_Palau, Mangrove_hmax95_Palau and   Mangrove_hba95_Palau
+![Clip Conation Raster](./Images/Clip_Condition_Raster.png)
+<p style="text-align:center;text decoration:bold">Figure 17: Clip Condition Indicators Raster</p>
 
 _ _By this the total Data Processing is been completed._  
 
@@ -296,11 +260,11 @@ To Produce Habitat Extent and Condition Accounts in each stage different inputs 
  window. 
   
 ![FirstStep](./Images/FirstStep.png)
-<p style="text-align:center;text decoration:bold">Figure 22: Get-Started</p>
+<p style="text-align:center;text decoration:bold">Figure 18: Get-Started</p>
 
 #### Step-3.1.2 R-Shiny Step-1 Upload Admin Boundaries(Ocean Extent And Condition Accounting)
 
-* In this step first the users need to upload the admin boundaries data which is in shape file formate. In this study we are using <span style="color:#0766AD">'Babeldaob .shp'</span>.
+* In this step first the users need to upload the admin boundaries data which is in shape file formate. In this study we are using <span style="color:#0766AD">'Ngarchelong.shp'</span>.
 
 * They need to include all other files <span style="color:#0766AD">.shp,.dbf,.sbn,.sbx,.shx,.prj</span> as well.
 
@@ -322,14 +286,14 @@ user need to select specific attribute Heading to filter the admin boundaries.In
 <span style="color:#0766AD">Island </span>.
 
 * From hear the user will be able to select the
-<span style="color:#0766AD">Attribute Name</span> in our case the attribute name is <span style="color:#0766AD">Babeldaob</span>.
+<span style="color:#0766AD">Attribute Name</span> in our case the attribute name is <span style="color:#0766AD">Ngarchelong</span>.
 
-* When the user click on the <span style="color:#0766AD">Babeldaob</span> on the Attribute name they will able to see the Babeldaob admin boundaries map.
+* When the user click on the <span style="color:#0766AD">Ngarchelong</span> on the Attribute name they will able to see the Ngarchelong admin boundaries map.
   
 * Next click on <span style="color:#0766AD">Next Step-2</span>.
   
 ![FirstStep](./Images/Step_1_Upload_Admin_Boundaries.png)
-<p style="text-align:center;text decoration:bold">Figure 23: Babeldaob admin boundaries map</p>
+<p style="text-align:center;text decoration:bold">Figure 19: Ngarchelong admin boundaries map</p>
 
 
 #### Step-3.1.3: R-Shiny Step-2 Upload Habitat Extent Data:
@@ -341,7 +305,7 @@ In this step in the side bar panel user need to update several parameters.
 
 
 ![FirstStep](./Images/Upload_habitate_opening_extent.png)
-<p style="text-align:center;text decoration:bold">Figure 24: Upload habitat opening extent closing  extent data and parameters</p>
+<p style="text-align:center;text decoration:bold">Figure 20: Upload habitat opening extent closing  extent data and parameters</p>
 
 * Next the user need to upload the <span style="color:#0766AD">'Habitant.csv' </span> file.
 
@@ -379,7 +343,7 @@ Table 3: Time Period.
 
 ![FirstStep](./Images/habitate_opening_extent_and_closing_extent_raster_data_set.png)
 
-<p style="text-align:center;text decoration:bold">Figure 25: Opening Extent Maps and Statics  </p>
+<p style="text-align:center;text decoration:bold">Figure 21: Opening Extent Maps and Statics  </p>
 
 
 
@@ -393,8 +357,8 @@ Table 3: Time Period.
  download button to download the statices table.
 
 
-![FirstStep](./Images/Closing_extent_map.png)
-<p style="text-align:center;text decoration:bold">Figure 26:Closing Extent Maps and Statics  </p>
+![FirstStep](./Images/closing_Extent_Statistics.png)
+<p style="text-align:center;text decoration:bold">Figure 22:Closing Extent Maps and Statics  </p>
 
 * Now the user need to go to the <span style="color:#0766AD">"Habitat transformation hot spot maps"</span> window. 
   
@@ -412,8 +376,8 @@ Table 3: Time Period.
 
 * Users need to click on the change statistics panel and they can download  the habitat change accounting tables and reports.
   
-![Step_2_Upload_Habitat_Extent_Data](./Images/Step_2_Upload_Habitat_Extent_Data.png)
-<p style="text-align:center;text decoration:bold">Figure 27: Change Statics  </p>
+![Habitate_Change_Markers_Map](./Images/Habitate_Change_Markers_Map.png)
+<p style="text-align:center;text decoration:bold">Figure 23: Change Statics  </p>
 
 
 * By the end of the section the users will be able to download different opening and closing statistics.
@@ -437,7 +401,7 @@ Table 3: Time Period.
  * In this step the users need to upload the inputs files of opening and closing time periods in raster file format in to the side bar panel. 
 
 ![Condition_Accounting](./Images/Condition_Accounting.png)
-Figure 28: Condition Accounting Side bar panel.
+Figure 24: Condition Accounting Side bar panel.
 
 * In the first step the user need to upload the condition indicators for opening time period.
    
@@ -487,8 +451,7 @@ Figure 28: Condition Accounting Side bar panel.
 * In the Opening Statistics user can download different accounting tables.
   
 ![Condition_opening](./Images/Condition_opening.png)
-
-Figure 29: Conation Opening Extent panel
+Figure 25: Conation Opening Extent panel
 
 * In the main panel in closing condition accounting user need to click on  run ![Run](./Images/Run.png) button to generate closing extent map and statistics and generate closing and condition change accounting report.
 
@@ -496,7 +459,8 @@ Figure 29: Conation Opening Extent panel
 *  In the closing Statistics user can ![Download](./Images/Download.png) closing statistics table.
 *  Next in the condition change statistics table user can download condition change statistics table and accounting report. 
 ![Condition_closing](./Images/Condition_closing.png)
-Figure 30: Conation Closing Extent panel
+
+  Figure 26: Conation Closing Extent panel
 
 
 
@@ -518,7 +482,7 @@ Figure 30: Conation Closing Extent panel
 
 ![Condition_closing](./Images/Step-4_Total_Habitat_Extent_and_Condition_Accounting.png)
 
-Figure 31: Input panel for total habitat Extent and Condition Accounting window.
+Figure 27: Input panel for total habitat Extent and Condition Accounting window.
 
 
 
@@ -557,8 +521,8 @@ Figure 31: Input panel for total habitat Extent and Condition Accounting window.
 * The will also able to see the data integrated accounting habitat transformation markers maps.
 * On the right side of the map users can download the "Habitat transformation markers map" report.
 
-  ![Habitat_Transformation_markers_map](./Images/Habitat_Transformation_markors_map.png)
-  <p style="text-align:center;text decoration:bold">Figure 32: Habitat Transformation markers map</p>
+  ![Habitat_Transformation_markers_map](./Images/Habitate_Transformation_FromMangroves_to_Non_Mangroves.png)
+  <p style="text-align:center;text decoration:bold">Figure 28: Habitat Transformation markers map</p>
   <br>
 
 * Next the user can download the <span style="color:#0766AD">"Habitat Opening" </span> statistics and report in Habitat Opening tab. Where the user will get the Min,Mean,Max and SD for the Habitat condition. For the Opening year fallowed by this the user can download the Habitat_opening_accounting_report.
@@ -579,7 +543,7 @@ habitat Extent Condition Change accounting report as a html file. To understand 
 * Fallowed by this the "Reference Level/Target" helps the users to get the reference  number to monitor how much the condition of the habitat is been varied from the specif reference point.  
 
 
-  ![Habitat_Condition_Change_Statistics](./Images/Habitat_Change.png)
+  ![Habitat_Condition_Change_Statistics](./Images/Habitate_Condition_Change_Statistics.png)
 
 <p style="text-align:center;text decoration:bold">Figure 31: Habitat Condition Change Statistics</p>
   

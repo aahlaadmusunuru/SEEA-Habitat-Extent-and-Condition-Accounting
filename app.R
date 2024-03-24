@@ -43,13 +43,6 @@ library(splitstackshape)
 # Define the color ramps
 
 
-
-
-
-
-
-
-
 # Color ramps
 color_ramps <- list(
   "Blues" = c("#F7FBFF", "#DEEBF7", "#C6DBEF", "#9ECAE1", "#6BAED6", "#4292C6", "#2171B5", "#08519C", "#08306B"),
@@ -72,7 +65,7 @@ color_ramps <- list(
 # Define UI for application that draws a histogram
 ui <-  
   
-  navbarPage("Ocean accoutnig",id = "inTabset",collapsible = TRUE,inverse = TRUE,theme = shinytheme("spacelab"),
+  navbarPage("Ocean Accounting",id = "inTabset",collapsible = TRUE,inverse = TRUE,theme = shinytheme("spacelab"),
              
              ###### Here : insert shinydashboard dependencies ######
              
@@ -971,8 +964,9 @@ ui <-
                                              style = "background-color:black;color:white;
                              height:40px;width:40px;border:none;
                              padding:0;display:flex;justify-content:center;
-                             align-items:center;")
-                              
+                             align-items:center;"),
+                         
+                         
                             )),
                           mainPanel(
                             
@@ -1031,10 +1025,14 @@ ui <-
                               tags$div(
                                 style = "position:relative;",
                                 leafletOutput("Condetion_Habitent_Tranformaion_Markers",height = "500px"),
+      
+                                
+                                
+                                
                                 tags$div(
                                   style = "position:absolute; top:105px; right:10px;",
                                   
-                                  downloadButton("Markers_Reports_Condition_Integrated", "", icon("download"),
+                                  downloadButton("MarkersIntigreatedReport", "", icon("download"),
                                                  style = "background-color:black;color:white;
                              height:40px;width:40px;border:none;
                              padding:0;display:flex;justify-content:center;
@@ -1045,9 +1043,16 @@ ui <-
         color: black;
         background-color: white;
       }
-    ")
-                                  )
-                                )
+    ")))
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
                                 
                               )
                              
@@ -1295,17 +1300,29 @@ tabPanel("User-Guide", value = "panel5",
              tags$h4(
                
                class = "gray-heading",
-               "It also helps to Producing Accounts using the R-Shiny application." ,tags$img(src = "coral.png", height = "30px", width = "30px"))
+               "Illustrate how to producing accounts using the R-Shiny application." ,tags$img(src = "coral.png", height = "30px", width = "30px"))
            ,
+           
              
              tags$h3(style="font-with:bold;","Help & feedback"),
              p("For help, feedback, and bug reports, please contact:"),
              
              tags$p(style = "font-weight: bold;", "Aahlaad Musunuru"),
-             tags$p("Email: aahlaadmusunuru1995@gmail.com")
-             
-             
-                    
+             tags$p("Email: aahlaadmusunuru1995@gmail.com"),
+           tags$p(style = "font-weight: bold;","Click on the download button to download the user manual."),
+           
+           downloadButton(
+             "User_Manual",
+             "",
+             icon("download"),
+             style = "background-color:black;color:white;
+    height:40px;width:40px;border:none;
+    padding:0;display:flex;justify-content:center;
+    align-items:center;"
+           )
+
+           
+           
              
            ),
            mainPanel(
@@ -1319,7 +1336,7 @@ tabPanel("User-Guide", value = "panel5",
              ),
              width = "100%",
              tabPanel('Manual',
-                   
+          
                       tags$iframe(src = "README.html", style = "width:100%; height:90vh;")
                       
                       
@@ -1432,7 +1449,13 @@ server <- function(input, output,session) {
   
   # Step 2 habitate  and stasticies 
   
-  
+  # Define the download handler
+  output$User_Manual <- downloadHandler(
+    filename = "README.pdf",
+    content = function(file) {
+      file.copy("www/README.pdf", file)
+    }
+  )
   
   # Downloadable csv of selected dataset ----
   output$downloadData <- downloadHandler(
@@ -1784,6 +1807,9 @@ server <- function(input, output,session) {
     leaflet()%>%addTiles()%>%addPolygons(data = adminBoundaries,fillColor = "#B3541E",stroke = FALSE,fillOpacity = 1)%>% addLegend(position = "topright",pal = p, values = c("Geographical_Extent"),title = "Legend")
     
   })
+  
+  
+  
   output$Opening <- downloadHandler(
     # For PDF output, change this to "report.pdf"
     filename = "Opening.html",
@@ -1796,8 +1822,7 @@ server <- function(input, output,session) {
       
       
       # Set up parameters to pass to Rmd document
-      params <- list(m= habitates_plote(),o=habitates_data(),p=habitates_Percentage(),q=habitates_Aea_hectarea(),s=metardata()) 
-      
+      params <- list(m = habitates_plote(), o = habitates_data(), p = habitates_Percentage(), q = habitates_Aea_hectarea(), s = metardata())
       
       # Knit the document, passing in the `params` list, and eval it in a
       # child of the global environment (this isolates the code in the document
@@ -1810,6 +1835,9 @@ server <- function(input, output,session) {
     
   )
   
+  
+  
+
   # habitate Closing 
   
   habitent_crop2<-reactive({
@@ -2598,21 +2626,22 @@ server <- function(input, output,session) {
     
     data.frame(Result_final)->R2
     
-    names(R2)<-c("Habitent Transfermation","Habitent Transfermation Area_ha")
-    R2
-    
-    
-    
-    
   
- 
+   
+    R3<-data.frame(R2[[1]],round( R2[[2]],digits = 2))
+    R3[2:3]->R3
+    names(R3)<-c("Habitent Transfermation","Habitent Transfermation Area_ha")
+    R3
+    
 
   })
   
   output$Habitate_Tranformation<-renderDataTable({
     
     
-    data.frame(habitate_Tranformation_Table())
+    Result<-data.frame(habitate_Tranformation_Table())
+    
+   
     
     
   },options = list(
@@ -2994,7 +3023,8 @@ server <- function(input, output,session) {
     
     merged_df
     
-      })
+      })%>%
+    bindEvent(input$csvFile7)
   
   output$Condition_habitentes<-renderDataTable({
     
@@ -3446,7 +3476,7 @@ server <- function(input, output,session) {
     searching = FALSE,  # Disable search box
     lengthMenu = c(10, 25, 50, 100),  # Set custom entry length options
     pageLength = 10  # Set default number of entries shown
-  ))
+  ))%>%bindEvent(closing_Condition_statis())
 
 
   
@@ -4699,30 +4729,34 @@ output$HabitentChange<- downloadHandler(
   
   
   # Habitate markers maps  Report 
-  output$Markers_Reports_Condition_Integrated <- downloadHandler(
+  output$MarkersIntigreatedReport <- downloadHandler(
     # For PDF output, change this to "report.pdf"
-    filename = "Markers_Condition_Integrated.html",
+    filename = "MarkersIntigreatedReport.html",
     content = function(file) {
       # Copy the report file to a temporary directory before processing it, in
       # case we don't have write permissions to the current working dir (which
       # can happen when deployed).
-      tempReport <- file.path(tempdir(), "Markers_Condition_Integrated.Rmd")
-      file.copy("Markers_Condition_Integrated.Rmd", tempReport, overwrite = TRUE)
+      tempReport <- file.path(tempdir(), "MarkersIntigreatedReport.Rmd")
+      file.copy("MarkersIntigreatedReport.Rmd", tempReport, overwrite = TRUE)
+      
       
       # Set up parameters to pass to Rmd document
-      params <- list( n=Condetion_Habitent_Tranformaion_Markers_map(),d=metardata()
-                      
-      ) 
+      params <- list(o=Condetion_Habitent_Tranformaion_Markers_map(),
+
+                     s=metardata()
+                     
+      )
+      
       # Knit the document, passing in the `params` list, and eval it in a
       # child of the global environment (this isolates the code in the document
       # from the code in this app).
       rmarkdown::render(tempReport, output_file = file,
                         params = params,
-                        envir = new.env(parent = globalenv())
-      )
+                        envir = new.env(parent = globalenv()) )
     }
     
   )
+  
   
   #  Step-1  Conditions 
   # Render Political Boundaries Attribute Header Selector
