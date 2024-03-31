@@ -1,0 +1,936 @@
+<!DOCTYPE html><html><head>
+      <title>README</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\user\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.13\crossnote\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<h1 id="h1-styletext-aligncenterseea-habitat-extent-and-conditions-accounting-toolh1"></h1><h1 style="text-align:center;">SEEA-Habitat Extent and Conditions Accounting-Tool</h1> 
+<p>Acknowledgement: For more information on the Habitat Extent and Conditions<br>
+Accounting Tool please contact Aahlaad Musunuru.</p>
+<p>Email: <a href="mailto:aahlaadmusunuru1995@gmail.com">aahlaadmusunuru1995@gmail.com</a></p>
+<ul>
+<li><a href="#seea-habitat-extent-and-conditions-accounting-tool">SEEA-Habitat Extent and Conditions Accounting-Tool</a>
+<ul>
+<li><a href="#background">Background</a></li>
+<li><a href="#overall-procedure">Overall Procedure:</a>
+<ul>
+<li><a href="#step-1-data-collection">Step-1 Data Collection:</a>
+<ul>
+<li><a href="#step-11-data-mangroves-data">Step-1.1-Data Mangroves Data:</a></li>
+<li><a href="#111-downloading-the-palau-admin-boundaries">1.1.1 Downloading the Palau Admin boundaries:</a></li>
+<li><a href="#112-download-mangroves-condition-indicators-data">1.1.2 Download Mangroves Condition indicators data:</a></li>
+</ul>
+</li>
+<li><a href="#step-2-data-pre-processing">Step-2:– Data Pre-Processing</a>
+<ul>
+<li><a href="#-211-add-admin-boundaries-data-into-qgis"> 2.1.1: Add Admin Boundaries Data into QGIS</a></li>
+<li><a href="#212-filter-the-admin-boundaries-data">2.1.2: Filter the admin boundaries data</a></li>
+<li><a href="#213-add-mangroves-data">2.1.3: Add Mangroves Data</a></li>
+<li><a href="#214-clip-mangroves-data">2.1.4: Clip Mangroves Data</a></li>
+<li><a href="#215-merge-mangroves-and-admin-layers">2.1.5: Merge mangroves and admin layers.</a></li>
+<li><a href="#216-convert-raster-to-vector">2.1.6: Convert Raster to Vector</a></li>
+<li><a href="#217-load-all-the-condition">2.1.7: Load all the Condition.</a></li>
+<li><a href="#218-clip-the-rasters-to-the-condition-indicators">2.1.8: Clip the rasters to the condition Indicators.</a></li>
+</ul>
+</li>
+<li><a href="#step-3-generating-habitat-extent-and-condition-accounts-using-r-shiny-habitat-extent-and-conditions-accounting-tool">Step-3: Generating Habitat Extent and Condition Accounts Using R-Shiny (Habitat Extent and Conditions Accounting-Tool):</a>
+<ul>
+<li><a href="#step-311-step-1-r-shiny-habitat-extent-and-condition-accounting">Step-3.1.1 Step-1: R-Shiny (Habitat Extent and Condition Accounting)</a></li>
+<li><a href="#step-312-r-shiny-step-1-upload-admin-boundarieshabitat-extent-and-condition-accounting">Step-3.1.2 R-Shiny Step-1 Upload Admin Boundaries(Habitat Extent and Condition Accounting)</a></li>
+<li><a href="#step-313-r-shiny-step-2-upload-habitat-extent-data">Step-3.1.3: R-Shiny Step-2 Upload Habitat Extent Data:</a></li>
+<li><a href="#step-314-inputs-step-3-upload-condition-data">Step-3.1.4: Inputs (Step-3 Upload Condition Data):</a></li>
+<li><a href="#step-315-inputs-step-4-total-habitat-extent-and-condition-accounting">Step-3.1.5: Inputs (Step-4 Total Habitat Extent and Condition Accounting):</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#appendix">Appendix</a>
+<ul>
+<li><a href="#qgis">QGIS</a></li>
+<li><a href="#downloading-and-installing-qgis">Downloading and Installing QGIS</a></li>
+<li><a href="#open-qgis">Open QGIS</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="background">Background </h2>
+<p>In this study, we have developed a tool using the R-Shiny application to support various stakeholders, including National Statistics Officers (NSOs), the Mangrove and Coral Reef Monitoring Center, the Ministry of Environment, Forest and Climate Change, as well as various non-profit organizations such as UNEP, UNDP, FAO, and others. The purpose of this tool is to monitor the extent and condition of habitats, and to generate SEEA (System of Environmental-Economic Accounts) extent and condition accounts tables and maps. Users are required to develop accounts by utilizing geo spatial data and reference statistical indicators. Prior to uploading the data as input to the R-Shiny application, the geo spatial datasets need to be preprocessed and prepared. Once the data is uploaded, users can generate various maps, accounting tables, and statistical reports.</p>
+<h2 id="overall-procedure">Overall Procedure: </h2>
+<p>The overall process is to develop several SEEA accounts is<br>
+distinguished in to 3 different types which includes Data collection , Data preprocessing and generating accounts In this study, we explain the process of producing habitat extent and condition accounts. We have chosen Palau's Ngarchelong island as a case study to develop various types of accounts.</p>
+<p><img src="./Work_Flow.png" alt="Ocerall Methodology"></p>
+<p style="text-align:center;text decoration:bold">Figure 1 : Overall Procedure</p>
+<h3 id="step-1-data-collection">Step-1 Data Collection: </h3>
+<p>In Data Collection and preprocessing stage we are going to download and pre process the mangroves extent and condition indicators to the Ngarchelong admin boundaries.</p>
+<h4 id="step-11-data-mangroves-data">Step-1.1-Data Mangroves Data: </h4>
+<ul>
+<li>In this study we can download the Global Mangrove Watch data from <a href="https://data.unep-wcmc.org/datasets/45">https://data.unep-wcmc.org/datasets/45</a>.  The data has been downloaded for two time periods 2007 and in 2016.</li>
+</ul>
+<p><img src="./Images/Mangroves.png" alt="Mangroves"></p>
+<p style="text-align:center;text decoration:bold">Figure 2 : Download mangroves data</p>
+<ul>
+<li>Once we have downloaded the data, we need to extract the global mangroves data for two time periods for year 2007 and 2016.</li>
+<li>Unzip the global mangroves data.</li>
+</ul>
+<p><img src="./Images/Mangroves_Global.png" alt="Mangroves_Global"></p>
+<p style="text-align:center;text decoration:bold">Figure 3 : Unzip mangroves data</p>
+<h4 id="a-namedownloadingthepalauadminboundariesa111-downloading-the-palau-admin-boundaries"><a name="DownloadingthePalauAdminboundaries:" href=""></a>1.1.1 Downloading the Palau Admin boundaries: </h4>
+<ul>
+<li>Download the Palau admin boundaries data from DIVA-GIS  (<a href="https://www.diva-gis.org/gdata">https://www.diva-gis.org/gdata</a>) or any other source in a shape file formate. Once the data has been downloading the user can start preprocessing .*<br>
+<img src="./Images/Download_Admin_Boundaries.png" alt="Download_Admin_Boundaries"></li>
+</ul>
+<p style="text-align:center;text decoration:bold">Figure 4 :  Downloading the Palau Admin boundaries:</p>
+<h4 id="a-namedownloadmangrovesconditionindicatorsdataa112-download-mangroves-condition-indicators-data"><a name="DownloadMangrovesConditionindicatorsdata:" href=""></a>1.1.2 Download Mangroves Condition indicators data: </h4>
+<p>Download Mangroves Condition indicators like Biomass, and Canopy Height from ORNL DAAC <a href="https://daac.ornl.gov/cgi-bin/dsviewer.pl?ds_id=1665">https://daac.ornl.gov/cgi-bin/dsviewer.pl?ds_id=1665</a>. To do this we first need to log in to the portal. Specifying the country name download the condition indicator namely Aboveground mangrove biomass, Mangrove basalarea weighted height and Mangrove canopy maximum height indicators for this use case we have download this three condition indicators Mangrove_agb_Palau, Mangrove_hba95_Palau and Mangrove_hmax95_Palau.</p>
+<p><img src="./Images/Biomas.png" alt="Biomas"></p>
+<p style="text-align:center;text decoration:bold">Figure 5 : Download  mangroves Biomas data</p>
+<h3 id="step-2-data-pre-processing">Step-2:– Data Pre-Processing </h3>
+<p>After downloading the data, the next action is data pre-processing using QGIS. QGIS is an opensource geographic information system application that supports viewing, editing and analysis of geospatial data.More information on how to download and install and use QGIS is provided in the Appendix to<br>
+this guide.</p>
+<h4 id="a-nameaddadminboundariesdataintoqgisa-211-add-admin-boundaries-data-into-qgis"><a name="AddAdminBoundariesDataintoQGIS" href=""></a> 2.1.1: Add Admin Boundaries Data into QGIS </h4>
+<p>For this exercise, we created a new folder and named it “Data Pre-Processing”. We encourage the user to do the same or choose a folder name and location that is convenient.</p>
+<p>Open QGIS Desktop with GRASS, and do the following:</p>
+<ul>
+<li>Click on <span style="color:#0766AD">Layer</span></li>
+<li>Go to <span style="color:#0766AD">“Add Layer”</span></li>
+<li>Select <span style="color:#0766AD">“Add Vector Layer”</span> as shown in the picture below</li>
+</ul>
+<p><img src="./Images/Add_vector_layer.png" alt="Add_vector_layer"></p>
+<p style="text-align:center;text decoration:bold">Figure 6 : Select Admin Boundaries layer</p>
+<ul>
+<li>Next, Click the Browse button and select the file <span style="color:#0766AD">PLW_adm1.shp</span>  in .shp file format</li>
+<li>Click <span style="color:#0766AD">Open</span>P</li>
+<li>Click <span style="color:#0766AD">“Add”</span> and close the window.</li>
+</ul>
+<p><img src="./Images/Add_Admin_boundata_PLW_adm1.png" alt="Add_vector_layer"></p>
+<p style="text-align:center;text decoration:bold">Figure 7 : Add Admin boundata PLW adm1</p>
+<h4 id="212-filter-the-admin-boundaries-data">2.1.2: Filter the admin boundaries data </h4>
+<ul>
+<li>Click on Select Feature By area button on top <img src="./Images/Select_filter.png" alt="Select_filter"></li>
+<li>Now select the  "Ngarchelong" region to filter the data.<br>
+<img src="./Images/PLW.png" alt="Palau_Admin_Selction"></li>
+</ul>
+<p style="text-align:center;text decoration:bold">Figure 8: Open the attribute table</p>
+<ul>
+<li>Filter the Ngarchelong region from the PLW_adm1</li>
+<li>Now right click on the PLW_adm1 and click on Export and select Save Selected Features As...<br>
+<img src="./Images/Export_Ngarchelong.png" alt="Export_Ngarchelong"></li>
+</ul>
+<p style="text-align:center;text decoration:bold">Figure 9: Export the Ngarchelong from PLW_adm1.</p>
+<ul>
+<li>Export the Ngarchelong region as a shape-file to QGIS.</li>
+</ul>
+<p><img src="./Images/Export_NgarchelongReagion_SHP.png" alt="Export_NgarchelongReagion_SHP"></p>
+<p style="text-align:center;text decoration:bold">Figure 10: Export the Ngarchelong admin extent.</p>
+<ul>
+<li>Ok</li>
+</ul>
+<h4 id="213-add-mangroves-data">2.1.3: Add Mangroves Data </h4>
+<ul>
+<li>Click on Add Layer</li>
+<li>Select add vector layer</li>
+<li>Add global mangroves <span style="color:#0766AD">gmw_v3_2007_vec.shp </span> and  <span style="color:#0766AD">gmw_v3_2016_vec.shp </span><br>
+<img src="./Images/Add_mangove_Global.png" alt="Add_mangrove_Global"></li>
+</ul>
+<p style="text-align:center;text decoration:bold">Figure 11: Add Vector layer</p>
+<ul>
+<li>Click on Add.</li>
+</ul>
+<h4 id="214-clip-mangroves-data">2.1.4: Clip Mangroves Data </h4>
+<ul>
+<li>In the processing tool box search for <span style="color:#0766AD">Clip vector by extent </span></li>
+<li>In the Input layer select <span style="color:#0766AD">gmw_v3_2007_vec </span></li>
+<li>In the Clipping extent select  <span style="color:#0766AD">Ngarchelong </span></li>
+<li>Click on select button and go to   <span style="color:#0766AD">Save to file</span></li>
+<li>Save the file as <span style="color:#0766AD">gmw_v3_2007_Ngarchelong</span></li>
+<li>Click on  <span style="color:#0766AD">Run</span></li>
+</ul>
+<p><img src="./Images/gmw_v3_2007_vec_clip_magroves.png" alt="gmw_v3_2007_vec_clip_magroves"></p>
+<p style="text-align:center;text decoration:bold">Figure 12: Clip the Global mangroves data</p>
+<ul>
+<li>Repeat the steps to clip the vector layer for <span style="color:#0766AD"> gmw_v3_2016_vec.shp </span> and save as <span style="color:#0766AD"> gmw_v3_2016_Ngarchelong.shp </span></li>
+</ul>
+<h4 id="215-merge-mangroves-and-admin-layers">2.1.5: Merge mangroves and admin layers. </h4>
+<ul>
+<li>
+<p>Now right click and remove all other layers except<span style="color:#0766AD">   Ngarchelong,     gmw_v3_2007_Ngarchelong, and gmw_v3_2016_Ngarchelong </span></p>
+</li>
+<li>
+<p>In the input layers select <span style="color:#0766AD">gmw_v3_2007_Ngarchelong and Ngarchelong </span></p>
+</li>
+<li>
+<p>In the distribution we need to select on  the <span style="color:#0766AD"> projection </span> .</p>
+</li>
+<li>
+<p>Finally save the layer as <span style="color:#0766AD"> Year_2007_Ngarchelong_Mangroves_Non_Mangroves</span></p>
+</li>
+<li>
+<p>Repeat the same steps and create a new merge layer and name as <span style="color:#0766AD">Year_2016_Ngarchelong_Mangroves_Non_Mangroves</span></p>
+</li>
+<li>
+<p>finally click on run to save the result.</p>
+</li>
+</ul>
+<p><img src="./Images/Merge_Vector_Layer_File.png" alt="stop_editing"></p>
+<p style="text-align:center;text decoration:bold">Figure 13: Merge Vector Layer</p>
+<ul>
+<li>
+<p>Right click on the <span style="color:#0766AD">Year_2007_Ngarchelong_Mangroves_Non_Mangroves</span> Click on Open Attribute Table</p>
+</li>
+<li>
+<p>Click on the <img src="./Images/stop_edditing.png" alt="stop_editing"> on top of the attribute table.</p>
+</li>
+<li>
+<p>Next in the PXLVAL field replace Null value with "2".</p>
+</li>
+<li>
+<p>In the fid replace "Null" value with the 0.</p>
+</li>
+<li>
+<p>click on save edit button <img src="./Images/Save_eddition_attribute.png" alt="Save_editing"> finally stop the editing.</p>
+</li>
+<li>
+<p>Click on close button to close the attribute table.</p>
+</li>
+</ul>
+<p><img src="./Images/Save_edditing_Attribute.png" alt="stop_editing"></p>
+<p style="text-align:center;text decoration:bold"> Figure 14: Open Attribute Table</p>
+<h4 id="216-convert-raster-to-vector">2.1.6: Convert Raster to Vector </h4>
+<ul>
+<li>
+<p>To do this first click on <span style="color:#0766AD">Raster</span> and select on conversion in which we need to convert from vector to raster.</p>
+</li>
+<li>
+<p>Input layer defeine  <span style="color:#0766AD">Year_2007_Ngarchelong_Mangroves_Non_Mangroves</span></p>
+</li>
+<li>
+<p>Field to use for a burn in value <span style="color:#0766AD">PXlVAL</span></p>
+</li>
+<li>
+<p>Output raster size units<span style="color:#0766AD">Georeferenced_units</span></p>
+</li>
+<li>
+<p>Width/Horizontal resolution define  <span style="color:#0766AD">0.000300</span></p>
+</li>
+<li>
+<p>Height/Vertical  resolution define  <span style="color:#0766AD">0.000300</span><br>
+Output extent define as <span style="color:#0766AD">Year_2007_Ngarchelong_Mangroves_Non_Mangroves</span></p>
+</li>
+<li>
+<p>If we go down click on brows button and we can see rasterized and select on <span style="color:#0766AD">save to file</span> save the raster image as <span style="color:#0766AD">Year_2007_Ngarchelong_Mangroves_Non_Mangroves</span></p>
+</li>
+<li>
+<p>Click on <span style="color:#0766AD">Run</span></p>
+</li>
+<li>
+<p>Repeat the same steps for the <span style="color:#0766AD">Year_2016_Ngarchelong_Mangroves_Non_Mangroves</span></p>
+</li>
+</ul>
+<p><img src="./Images/Convert_Vector_raster.png" alt="Convert Raster to Vector"></p>
+<p style="text-align:center;text decoration:bold">Figure 15: Convert Raster to Vector</p>
+<ul>
+<li>Right click and remove all the layers except  Year_2007_Ngarchelong_Mangroves_Non_Mangroves,Year_2016_Ngarchelong_Mangroves_Non_Mangroves raster files more over the Ngarchelong layer.</li>
+</ul>
+<h4 id="217-load-all-the-condition">2.1.7: Load all the Condition. </h4>
+<ul>
+<li>Now click on Layers</li>
+<li>Next Select Add raser Layers</li>
+<li>Add all the condition raster layers in to QGIS Mangrove_agb_Palau,Mangrove_hmax95_Palau and Mangrove_hba95_Palau<br>
+<img src="./Images/Add_raster_layer.png" alt="Add_raster_layer"></li>
+</ul>
+<p style="text-align:center;text decoration:bold">Figure 16: Load the Condition Raster</p>
+<h4 id="218-clip-the-rasters-to-the-condition-indicators">2.1.8: Clip the rasters to the condition Indicators. </h4>
+<ul>
+<li>First click in raster and go to the  <span style="color:#0766AD">Extraction</span>.</li>
+<li>Next Click on <span style="color:#0766AD">Clip raster by mask layer</span></li>
+<li>In the input layer  define <span style="color:#0766AD">Mangrove_agb_Palau</span></li>
+<li>In the masking layer define  <span style="color:#0766AD">Ngarchelong</span></li>
+<li>Define the   <span style="color:#0766AD">Projection</span></li>
+<li>Click on  <span style="color:#0766AD">Run</span></li>
+<li>Clip the raster for all three layers Mangrove_agb_Palau, Mangrove_hmax95_Palau and   Mangrove_hba95_Palau<br>
+<img src="./Images/Clip_Condition_Raster.png" alt="Clip Conation Raster"></li>
+</ul>
+<p style="text-align:center;text decoration:bold">Figure 17: Clip Condition Indicators Raster</p>
+<p>_ <em>By this the total Data Processing is been completed.</em></p>
+<h3 id="step-3-generating-habitat-extent-and-condition-accounts-using-r-shiny-habitat-extent-and-conditions-accounting-tool">Step-3: Generating Habitat Extent and Condition Accounts Using R-Shiny (Habitat Extent and Conditions Accounting-Tool): </h3>
+<p>To generate Habitat extent and Condition Accounts in this study we have used R-Shiny application. Where any user can download different Accounts in different stages. Overall the tool is divided in to 4 different groups which are</p>
+<ul>
+<li>Step-1 Upload Admin Boundaries,</li>
+<li>Step-2 Upload Habitat Extent Data,</li>
+<li>Step-3 Upload Condition Data</li>
+<li>Step-4 Total Habitat Extent and Condition Accounting.</li>
+</ul>
+<p>To Produce Habitat Extent and Condition Accounts in each stage different inputs data sets are need to be prepared. User need to provide both raster data and vector data in different stages fallowed with that they also need to provide some ".csv". When the user comes to final step, they can download overall Habitat change accounting report.</p>
+<ul>
+<li>
+<p>The above data collection and pre processing stages can be skipped if the users have download the sample data.</p>
+</li>
+<li>
+<p>The data collection and pre processing steps above proved the process how to prepare the spacial data inputs to produce habitat extent and condition accounts.</p>
+</li>
+<li>
+<p>Users can click on "INSTRUCTIONAL VIDEO" to see how  the  Habitat Extent and Conditions Accounting Tool works.</p>
+</li>
+<li>
+<p>The below steps provide more elaborative way how to use the Habitat Extent and Condition Accounting tool.</p>
+</li>
+</ul>
+<h4 id="step-311-step-1-r-shiny-habitat-extent-and-condition-accounting">Step-3.1.1 Step-1: R-Shiny (Habitat Extent and Condition Accounting) </h4>
+<ul>
+<li>Click on this url to access this R-shiny tool. (<a href="https://aahlaad-musunuru.shinyapps.io/SEEA_Ocean_Accounting/">https://aahlaad-musunuru.shinyapps.io/SEEA_Ocean_Accounting/</a>)</li>
+<li>First the user need to click on <span style="color:#0766AD">"Get Started Now"</span> Button.</li>
+<li>It will redirect to a  <span style="color:#0766AD">"Step-1 Upload Admin Boundaries"</span><br>
+window.</li>
+</ul>
+<p><img src="./Images/Habitate_extent_condition_Accounting_Tool.png" alt="FirstStep"></p>
+<p style="text-align:center;text decoration:bold">Figure 18: Get-Started</p>
+<h4 id="step-312-r-shiny-step-1-upload-admin-boundarieshabitat-extent-and-condition-accounting">Step-3.1.2 R-Shiny Step-1 Upload Admin Boundaries(Habitat Extent and Condition Accounting) </h4>
+<ul>
+<li>
+<p>In this step first the users need to upload the admin boundaries data which is in shape file formate. In this study we are using <span style="color:#0766AD">'Ngarchelong.shp'</span>.</p>
+</li>
+<li>
+<p>They need to include all other files <span style="color:#0766AD">.shp,.dbf,.sbn,.sbx,.shx,.prj</span> as well.</p>
+</li>
+<li>
+<p>Next the user need to click on Meta Data file and upload <span style="color:#0766AD">  'Habitent_metardata.csv'</span>.</p>
+</li>
+<li>
+<p>The below table gives the example of the <span style="color:#0766AD">'Habitat Meta Data file'</span>.</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Data Type</th>
+<th>Satellite</th>
+<th>Projection</th>
+<th>Resolution</th>
+<th>Format</th>
+<th>Data Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mangroves</td>
+<td>JERS-1, ALOS PALSAR, ALOS-2 PALSAR-2</td>
+<td>WGS 1984</td>
+<td>30 m</td>
+<td>SHP</td>
+<td><a href="https://data.unep-wcmc.org/datasets/45">UNEP-WCMC</a></td>
+</tr>
+<tr>
+<td>World Database on Protected Areas</td>
+<td></td>
+<td>WGS 1984</td>
+<td></td>
+<td>SHP</td>
+<td><a href="https://www.iucn.org/theme/protected-areas/our-work/world-database-protected-areas">IUCN - World Database</a></td>
+</tr>
+</tbody>
+</table>
+<p>Table 1: Metadata Table.</p>
+<ul>
+<li>
+<p>From then two new dropdown we can see  <span style="color:#0766AD">Attribute Heading</span><br>
+user need to select specific attribute Heading to filter the admin <a href="http://boundaries.In">boundaries.In</a> this study we are selecting<br>
+<span style="color:#0766AD">Island </span>.</p>
+</li>
+<li>
+<p>From hear the user will be able to select the<br>
+<span style="color:#0766AD">Attribute Name</span> in our case the attribute name is <span style="color:#0766AD">Ngarchelong</span>.</p>
+</li>
+<li>
+<p>When the user click on the <span style="color:#0766AD">Ngarchelong</span> on the Attribute name they will able to see the Ngarchelong admin boundaries map.</p>
+</li>
+<li>
+<p>Next click on <span style="color:#0766AD">Next Step-2</span>.</p>
+</li>
+</ul>
+<p><img src="./Images/Step_1_Upload_Admin_Boundaries.png" alt="FirstStep"></p>
+<p style="text-align:center;text decoration:bold">Figure 19: Ngarchelong admin boundaries map</p>
+<h4 id="step-313-r-shiny-step-2-upload-habitat-extent-data">Step-3.1.3: R-Shiny Step-2 Upload Habitat Extent Data: </h4>
+<p>In this step in the side bar panel user need to update several parameters.</p>
+<ul>
+<li>
+<p>In this step users need to provide opening extent raster data in this study we are providing clipped mangrove non mangroves raster data of <span style="color:#0766AD">"Year2007.tif" </span></p>
+</li>
+<li>
+<p>In the next step users need to provide closing extent raster data in this study we are providing clipped mangrove non mangroves raster data of <span style="color:#0766AD">"Year2016.tif" </span></p>
+</li>
+</ul>
+<p><img src="./Images/Upload_habitate_opening_extent.png" alt="FirstStep"></p>
+<p style="text-align:center;text decoration:bold">Figure 20: Upload habitat opening extent closing  extent data and parameters</p>
+<ul>
+<li>
+<p>Next the user need to upload the <span style="color:#0766AD">'Habitant.csv' </span> file.</p>
+</li>
+<li>
+<p>The column names are defined as <span style="color:#0766AD">ID,Classes and Colors</span>.</p>
+</li>
+<li>
+<p>The ID which represents the Pixel ID of the raster.</p>
+</li>
+<li>
+<p>Next the user need to provide the habitat classes which gives the information about the habitat names.</p>
+</li>
+<li>
+<p>More on we can see the habitat colors.</p>
+</li>
+<li>
+<p>This file need to saved as a <span style="color:#0766AD">Habitant.csv</span> file formate.</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Habitat</th>
+<th>Colors</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Mangroves</td>
+<td>#064635</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Non Mangroves</td>
+<td>#F7F7F7</td>
+</tr>
+</tbody>
+</table>
+<p>Table 2: Habitant Classifications.</p>
+<ul>
+<li>Finally they need to upload the time period data <span style="color:#0766AD">'Years_Data.csv' </span> file.
+<table>
+<thead>
+<tr>
+<th>Years</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Year 2007</td>
+</tr>
+<tr>
+<td>Year 2017</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<p>Table 3: Time Period.</p>
+<ul>
+<li>
+<p>First In the main panel the user need to click on the run button <img src="./Images/Run.png" alt="FirstStep"> in the opening extent map.</p>
+</li>
+<li>
+<p>Mangrove opening extent  map will appear on the display.</p>
+</li>
+<li>
+<p>User need to click on <img src="./Images/Download.png" alt="Download"><br>
+download button on the right to download the opening extent accounting report.</p>
+</li>
+<li>
+<p>Next the user need to go and click on <span style="color:#0766AD">"Opening Extent Statistics" </span> panel if they want to see the statices  tables.</p>
+</li>
+<li>
+<p>Finally they need to click on<img src="./Images/Download.png" alt="Download"><br>
+download button to download the statices table.</p>
+</li>
+</ul>
+<p><img src="./Images/habitate_opening_extent_and_closing_extent_raster_data_set.png" alt="FirstStep"></p>
+<p style="text-align:center;text decoration:bold">Figure 21: Opening Extent Maps and Statics  </p>
+<ul>
+<li>
+<p>In the main panel the user need to click on the run button <img src="./Images/Run.png" alt="Run"> in in the closing extent map.</p>
+</li>
+<li>
+<p>Mangrove closing extent  map will appear on the display.</p>
+</li>
+<li>
+<p>User need to click on <img src="./Images/Download.png" alt="Download"><br>
+download button on the right to download the closing extent accounting report.</p>
+</li>
+<li>
+<p>Next the user need to go and click on <span style="color:#0766AD">"closing Extent Statistics" </span> panel if they want to see the statices  tables.</p>
+</li>
+<li>
+<p>Finally they need to click on<img src="./Images/Download.png" alt="Download"><br>
+download button to download the statices table.</p>
+</li>
+</ul>
+<p><img src="./Images/closing_Extent_Statistics.png" alt="FirstStep"></p>
+<p style="text-align:center;text decoration:bold">Figure 22:Closing Extent Maps and Statics  </p>
+<ul>
+<li>
+<p>Now the user need to go to the <span style="color:#0766AD">"Habitat transformation hot spot maps"</span> window.</p>
+</li>
+<li>
+<p>First In the main panel the user need to click on the run button <img src="./Images/Run.png" alt="FirstStep"> user will able to see  the Habitats transformation hot spot maps.</p>
+</li>
+<li>
+<p>On the left side the user need to change the dropdown window to change<span style="color:#0766AD">"Habitat transformation hot spot maps"</span>.</p>
+</li>
+<li>
+<p>User need to click on <img src="./Images/Download.png" alt="Download"><br>
+download button on the right to download the Habitat transformation hot spot and report.</p>
+</li>
+<li>
+<p>Similar to this the users can download the<br>
+<span style="color:#0766AD">"Habitat transformation markers marks maps"</span>.</p>
+</li>
+<li>
+<p>Users need to click on the change statistics panel and they can download  the habitat change accounting tables and reports.</p>
+</li>
+</ul>
+<p><img src="./Images/Habitate_Change_Markers_Map.png" alt="Habitate_Change_Markers_Map"></p>
+<p style="text-align:center;text decoration:bold">Figure 23: Change Statics  </p>
+<ul>
+<li>
+<p>By the end of the section the users will be able to download different opening and closing statistics.<br>
+<br></p>
+<ul>
+<li>a) Opening Extent Html report.</li>
+<li>b) Opening Extent Statistics which shows the Area.ha and percentage of habitat.</li>
+<li>c) Closing Extent Html report.</li>
+<li>d) Closing Extent Statistics which shows the Area.ha and percentage of habitat.<br>
+<br></li>
+</ul>
+</li>
+<li>
+<p>Users can download the habitat change statistics and habitat transformation maps.</p>
+<ul>
+<li>a) Ecosystem asset accounting tables.</li>
+<li>b) Habitat Transition Change Matrix.</li>
+<li>c) Habitat Percentage Change Table.</li>
+<li>d) Habitat Transformation Table.</li>
+<li>e) Habitat transformation hot spot maps report.</li>
+<li>f) Habitat transformation markers maps report.</li>
+</ul>
+</li>
+</ul>
+<h4 id="step-314-inputs-step-3-upload-condition-data">Step-3.1.4: Inputs (Step-3 Upload Condition Data): </h4>
+<ul>
+<li>In this step the users need to upload the inputs files of opening and closing time periods in raster file format in to the side bar panel.</li>
+</ul>
+<p><img src="./Images/Condition_Accounting.png" alt="Condition_Accounting"><br>
+Figure 24: Condition Accounting Side bar panel.</p>
+<ul>
+<li>
+<p>In the first step the user need to upload the condition indicators for opening time period.</p>
+<ul>
+<li>Mangrove_agb_Palau.tif</li>
+<li>Mangrove_hba95_Palau.tif</li>
+<li>Mangrove_hmax95_Palau.tif</li>
+</ul>
+</li>
+<li>
+<p>Fallowed by this they need to upload the condition indicator parameters table in opening time periods.<span style="color:#0766AD">ecosystem_condition_opening.csv</span></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Condition Indicator</th>
+<th>Time Interval</th>
+<th>Measurement Unit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Aboveground mangrove biomass</td>
+<td>2010</td>
+<td>Mg ha-1</td>
+</tr>
+<tr>
+<td>Mangrove basal area weighted height</td>
+<td>2010</td>
+<td>meters</td>
+</tr>
+<tr>
+<td>Mangrove canopy maximum height</td>
+<td>2010</td>
+<td>meters</td>
+</tr>
+</tbody>
+</table>
+<p>Table 2: Ecosystem Condition Opening Accounting table.</p>
+<ul>
+<li>
+<p>Next if the user intrusted they need to change the color ramp.</p>
+</li>
+<li>
+<p>Similar to the opening time period user ned to upload the condition indicators for closing time period.</p>
+</li>
+<li>
+<p>In this case we are uploading same parameters for the closing time periods due to lack of available data in closing time periods.</p>
+<ul>
+<li>Mangrove_agb_Palau.tif</li>
+<li>Mangrove_hba95_Palau.tif</li>
+<li>Mangrove_hmax95_Palau.tif</li>
+</ul>
+</li>
+<li>
+<p>Fallowed by this they need to upload the condition indicator parameters table in Closing time periods.<span style="color:#0766AD">ecosystem_condition_closing.csv</span></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Condition Indicator</th>
+<th>Time Interval</th>
+<th>Measurement Unit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Aboveground mangrove biomass</td>
+<td>2010</td>
+<td>Mg ha-1</td>
+</tr>
+<tr>
+<td>Mangrove basal area weighted height</td>
+<td>2010</td>
+<td>meters</td>
+</tr>
+<tr>
+<td>Mangrove canopy maximum height</td>
+<td>2010</td>
+<td>meters</td>
+</tr>
+</tbody>
+</table>
+<p>Table 3: Ecosystem Condition Closing Accounting table.</p>
+<ul>
+<li>
+<p>In the main panel in opening condition accounting user need to click on  run <img src="./Images/Run.png" alt="Run"> button to generate opening extent map and statistics and generate opening accounting report.</p>
+</li>
+<li>
+<p>User can chang the drop downs on the maps to see different condition indicators.</p>
+</li>
+<li>
+<p>Next the user can download the accounting report by clicking on download button on right <img src="./Images/Download.png" alt="Download">.</p>
+</li>
+<li>
+<p>In the Opening Statistics user can download different accounting tables.</p>
+</li>
+</ul>
+<p><img src="./Images/Condition_opening.png" alt="Condition_opening"><br>
+Figure 25: Conation Opening Extent panel</p>
+<ul>
+<li>
+<p>In the main panel in closing condition accounting user need to click on  run <img src="./Images/Run.png" alt="Run"> button to generate closing extent map and statistics and generate closing and condition change accounting report.</p>
+</li>
+<li>
+<p>Next the user will be able to see the different condition indicators on top left.</p>
+</li>
+<li>
+<p>In the closing Statistics user can <img src="./Images/Download.png" alt="Download"> closing statistics table.</p>
+</li>
+<li>
+<p>Next in the condition change statistics table user can download condition change statistics table and accounting report.<br>
+<img src="./Images/Condition_closing.png" alt="Condition_closing"></p>
+</li>
+</ul>
+<p>Figure 26: Conation Closing Extent panel</p>
+<ul>
+<li>By the end of the this section the user will be able to produce the habitat condition accenting and reports as show bellow.</li>
+</ul>
+<ul>
+<li>a) Condition Opening statices (Min, Mean, Max and SD) table.</li>
+<li>b) Condition Opening statices report.</li>
+<li>c) Condition Closing statices (Min, Mean, Max and SD) table.</li>
+<li>d) Condition Change Accounting statices table.csv.</li>
+<li>e) Condition Change statices report.html.</li>
+<li>f) Condition Change Accounting report.html.</li>
+</ul>
+<h4 id="step-315-inputs-step-4-total-habitat-extent-and-condition-accounting">Step-3.1.5: Inputs (Step-4 Total Habitat Extent and Condition Accounting): </h4>
+<ul>
+<li>In this step the user will able to see and download the total Habitat extent and condition Accounting statistics.</li>
+</ul>
+<p><img src="./Images/Step-4_Total_Habitat_Extent_and_Condition_Accounting.png" alt="Condition_closing"></p>
+<p>Figure 27: Input panel for total habitat Extent and Condition Accounting window.</p>
+<ul>
+<li>Users need to upload the "References_Habitats.csv" file table to generate habitat change statics.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Statistics</th>
+<th>Condition</th>
+<th>Habitat</th>
+<th>Reference Level/Target</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Min</td>
+<td>Aboveground mangrove biomass</td>
+<td>Mangroves</td>
+<td></td>
+</tr>
+<tr>
+<td>Mean</td>
+<td>Aboveground mangrove biomass</td>
+<td>Mangroves</td>
+<td></td>
+</tr>
+<tr>
+<td>Max</td>
+<td>Aboveground mangrove biomass</td>
+<td>Mangroves</td>
+<td></td>
+</tr>
+<tr>
+<td>SD</td>
+<td>Aboveground mangrove biomass</td>
+<td>Mangroves</td>
+<td></td>
+</tr>
+<tr>
+<td>Min</td>
+<td>Mangrove basal area weighted height</td>
+<td>Mangroves</td>
+<td></td>
+</tr>
+<tr>
+<td>Mean</td>
+<td>Mangrove basal area weighted height</td>
+<td>Mangroves</td>
+<td></td>
+</tr>
+<tr>
+<td>Max</td>
+<td>Mangrove basal area weighted height</td>
+<td>Mangroves</td>
+<td></td>
+</tr>
+<tr>
+<td>SD</td>
+<td>Mangrove basal area weighted height</td>
+<td>Mangroves</td>
+<td></td>
+</tr>
+<tr>
+<td>Min</td>
+<td>Mangrove canopy maximum height</td>
+<td>Mangroves</td>
+<td></td>
+</tr>
+<tr>
+<td>Mean</td>
+<td>Mangrove canopy maximum height</td>
+<td>Mangroves</td>
+<td></td>
+</tr>
+<tr>
+<td>Max</td>
+<td>Mangrove canopy maximum height</td>
+<td>Mangroves</td>
+<td></td>
+</tr>
+<tr>
+<td>SD</td>
+<td>Mangrove canopy maximum height</td>
+<td>Mangroves</td>
+<td></td>
+</tr>
+<tr>
+<td>Min</td>
+<td>Aboveground mangrove biomass</td>
+<td>Non Mangroves</td>
+<td></td>
+</tr>
+<tr>
+<td>Mean</td>
+<td>Aboveground mangrove biomass</td>
+<td>Non Mangroves</td>
+<td></td>
+</tr>
+<tr>
+<td>Max</td>
+<td>Aboveground mangrove biomass</td>
+<td>Non Mangroves</td>
+<td></td>
+</tr>
+<tr>
+<td>SD</td>
+<td>Aboveground mangrove biomass</td>
+<td>Non Mangroves</td>
+<td></td>
+</tr>
+<tr>
+<td>Min</td>
+<td>Mangrove basal area weighted height</td>
+<td>Non Mangroves</td>
+<td></td>
+</tr>
+<tr>
+<td>Mean</td>
+<td>Mangrove basal area weighted height</td>
+<td>Non Mangroves</td>
+<td></td>
+</tr>
+<tr>
+<td>Max</td>
+<td>Mangrove basal area weighted height</td>
+<td>Non Mangroves</td>
+<td></td>
+</tr>
+<tr>
+<td>SD</td>
+<td>Mangrove basal area weighted height</td>
+<td>Non Mangroves</td>
+<td></td>
+</tr>
+<tr>
+<td>Min</td>
+<td>Mangrove canopy maximum height</td>
+<td>Non Mangroves</td>
+<td></td>
+</tr>
+<tr>
+<td>Mean</td>
+<td>Mangrove canopy maximum height</td>
+<td>Non Mangroves</td>
+<td></td>
+</tr>
+<tr>
+<td>Max</td>
+<td>Mangrove canopy maximum height</td>
+<td>Non Mangroves</td>
+<td></td>
+</tr>
+<tr>
+<td>SD</td>
+<td>Mangrove canopy maximum height</td>
+<td>Non Mangroves</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align:left;text decoration:bold">Table 4: References Habitats.</p>
+<ul>
+<li>
+<p>The will also able to see the data integrated accounting habitat transformation markers maps.</p>
+</li>
+<li>
+<p>On the right side of the map users can download the "Habitat transformation markers map" report.</p>
+<p><img src="./Images/Habitate_Transformation_FromMangroves_to_Non_Mangroves.png" alt="Habitat_Transformation_markers_map"></p>
+<p style="text-align:center;text decoration:bold">Figure 28: Habitat Transformation markers map</p>
+<br>
+</li>
+<li>
+<p>Next the user can download the <span style="color:#0766AD">"Habitat Opening" </span> statistics and report in Habitat Opening tab. Where the user will get the Min,Mean,Max and SD for the Habitat condition. For the Opening year fallowed by this the user can download the Habitat_opening_accounting_report.</p>
+</li>
+</ul>
+<p><img src="./Images/Habitat_Opening.png" alt="Habitat_Opening"></p>
+<p style="text-align:center;text decoration:bold">Figure 29: Habitat Condition Statistics</p>
+<ul>
+<li>Next the user can download the <span style="color:#0766AD"> "Habitat Closing" </span>    statistics and report in Habitat Closing tab. Where the user will get the Min,Mean,Max and SD for the Habitat condition for the Closing year fallowed by this the user can download the Habitat_Closing accounting report in the closing time period.<br>
+<img src="./Images/Habita_Closing.png" alt="Habitat_Closing"></li>
+</ul>
+<p style="text-align:center;text decoration:bold">Figure 30: Habitat Condition Closing Statistics</p>
+<br>
+<ul>
+<li>
+<p>In the <span style="color:#0766AD"> "Habitat Condition Change Statistics" </span>  table users can download the Habitat Condition Change Statistics as a excel work book more over they can download the<br>
+habitat Extent Condition Change accounting report as a html file. To understand the condition of the habitats in two time frames.</p>
+</li>
+<li>
+<p>Fallowed by this the "Reference Level/Target" helps the users to get the reference  number to monitor how much the condition of the habitat is been varied from the specif reference point.</p>
+<p><img src="./Images/Habitate_Condition_Change_Statistics.png" alt="Habitat_Condition_Change_Statistics"></p>
+</li>
+</ul>
+<p style="text-align:center;text decoration:bold">Figure 31: Habitat Condition Change Statistics</p>
+<ul>
+<li>In the final section the users  will be able to download different types of accounting reports maps and tables.</li>
+</ul>
+<ul>
+<li>a) Habitat condition accounting table opening:</li>
+<li>b) Habitat condition accounting opening report:</li>
+<li>c) Habitat condition accounting table closing:</li>
+<li>d) Habitat condition accounting closing report:</li>
+<li>e) Habitat condition accounting table change:</li>
+<li>f)  Total Habitat extent and condition accounting report .html file.</li>
+</ul>
+<h2 id="appendix">Appendix </h2>
+<p>The Appendix gives a brief overview of QGIS, which is the open-source programs used in the exercise outlined in this guide and shows how to download and install these programs for use.</p>
+<h3 id="qgis">QGIS </h3>
+<p>QGIS is a cross-platform desktop geographic information system that supports viewing, editing and analysis of geo-spatial data.<br>
+We used the most recent version of QGIS available, and we advise that you do the same.</p>
+<ul>
+<li>GRASS – Geographic Resource Analysis Support System</li>
+<li>SAGA – System of Automated Geoscientific Analysis</li>
+<li>GDAL – Geographic Data Abstraction Library</li>
+</ul>
+<h3 id="downloading-and-installing-qgis">Downloading and Installing QGIS </h3>
+<ol>
+<li>Go to the QGIS website (<a href="https://qgis.org/en/site/forusers/download.html">https://qgis.org/en/site/forusers/download.html</a>)</li>
+<li>Download the resent version.</li>
+</ol>
+<p><img src="./Images/Download_QGIS.png" alt="Download_QGIS"></p>
+<ol start="3">
+<li>We have used the resent version to download and install Qgis.</li>
+</ol>
+<p><img src="./Images/QGIS_Download.png" alt="Download_QGIS-OSGeo4W-3.36.0-1"></p>
+<ol start="4">
+<li>Click on Next button to start installing QGIS.</li>
+</ol>
+<p><img src="./Images/Start_Installing_QGIS.png" alt="Start_Installing_QGIS-3.36.0-1"></p>
+<ol start="6">
+<li>Click on I Agree for license agreement as seen below:</li>
+</ol>
+<p><img src="./Images/Accept_Termsn_and_Conditions_QGIS.png" alt="Accept_Termsn_and_Conditions_QGIS.png-3.36.0-1"></p>
+<ol start="7">
+<li>
+<p>Click on Next in Choose Install Location, as seen in picture below:</p>
+<p><img src="./Images/adjust_setup.png" alt="adjust_setup.png-3.36.0-1"></p>
+</li>
+<li>
+<p>At the end click on install button to install the QGIS.</p>
+<p><img src="./Images/Last_Click_Install.png" alt="Last_Click_Install-3.36.0-1"></p>
+</li>
+</ol>
+<h3 id="open-qgis">Open QGIS </h3>
+<ul>
+<li>Now Open the Installed QGIS  and Click on New Empty project to start.</li>
+</ul>
+<p><img src="./Images/Open_QGIS.png" alt="Open_QGIS-3.36.0-1"></p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
